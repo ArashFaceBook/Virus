@@ -17,13 +17,13 @@ local function enable_channel(receiver)
 	end
 
 	if _config.disabled_channels[receiver] == nil then
-		return 'Channel isn\'t disabled'
+		return 'supergroups isn\'t disabled'
 	end
 	
 	_config.disabled_channels[receiver] = false
 
 	save_config()
-	return "Channel re-enabled"
+	return "supergroup re-enabled"
 end
 
 local function disable_channel( receiver )
@@ -34,7 +34,7 @@ local function disable_channel( receiver )
 	_config.disabled_channels[receiver] = true
 
 	save_config()
-	return "Channel disabled"
+	return "supergroup disabled"
 end
 
 local function pre_process(msg)
@@ -67,7 +67,7 @@ local function run(msg, matches)
 end
 
 return {
-	description = "Plugin to manage channels. Enable or disable channel.", 
+	description = "Plugin to manage supergroup. Enable or disable supergroups.", 
 	usage = {
 		"!supergroup enable: ",
 		 },
