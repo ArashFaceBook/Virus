@@ -42,7 +42,7 @@ local function pre_process(msg)
 	
 	-- If sender is sudo then re-enable the channel
 	if is_sudo(msg) then
-	  if msg.text == "!channel enable" then
+	  if msg.text == "/supergroup +" then
 	    enable_channel(receiver)
 	  end
 	end
@@ -57,11 +57,11 @@ end
 local function run(msg, matches)
 	local receiver = get_receiver(msg)
 	-- Enable a channel
-	if matches[1] == 'enable' then
+	if matches[1] == '+' then
 		return enable_channel(receiver)
 	end
 	-- Disable a channel
-	if matches[1] == 'disable' then
+	if matches[1] == '-' then
 		return disable_channel(receiver)
 	end
 end
@@ -69,11 +69,11 @@ end
 return {
 	description = "Plugin to manage channels. Enable or disable channel.", 
 	usage = {
-		"!channel enable: enable current channel",
-		"!channel disable: disable current channel" },
+		"!supergroup enable: ",
+		 },
 	patterns = {
-		"^!channel? (enable)",
-		"^!channel? (disable)" }, 
+		"^/supergroup? (+)",
+		"^/supergroup? (-)" }, 
 	run = run,
 	privileged = true,
 	pre_process = pre_process
