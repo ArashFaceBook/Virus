@@ -69,7 +69,7 @@ end
 return {
 	description = "Plugin to manage supergroup. Enable or disable supergroups.", 
 	usage = {
-		"!supergroup enable: ",
+		"!supergroup [+][-]: disable or enable supgp: ",
 		 },
 	patterns = {
 		"^/supergroup? (+)",
