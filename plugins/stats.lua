@@ -147,7 +147,7 @@ local function run(msg, matches)
       end
     end
 
-    if matches[2] == "bot" then
+    if matches[2] == "SuperInfernal" then
       if not is_sudo(msg) then
         return "Bot stats requires privileged user"
       else
@@ -173,9 +173,9 @@ return {
     "!stats bot: Shows bot stats (sudo users)"
   },
   patterns = {
-    "^!([Ss]tats)$",
-    "^!([Ss]tats) (chat) (%d+)",
-    "^!([Ss]tats) (bot)"
+    "^/([Ss]tats)$",
+    "^/([Ss]tats) (chat) (%d+)",
+    "^/([Ss]tats) (SuperInfernal)"
     }, 
   run = run,
   pre_process = pre_process
