@@ -1,9 +1,19 @@
 do
 
 function run(msg, matches)
-  return 'Telegram Bot '.. VERSION .. [[ 
-  Checkout http://git.io/6jdjGg
-  GNU GPL v2 license.]]
+  return 'InfernalTG V 4.1 [[ 
+  Website : https://Arash-Infernal.epage.IR
+  Official github : https://github.com/INFERNALTEAM/InfernalTG
+  Sudo admin : @ArashInfernal
+  You Can Get the Supports link in our github
+  antispam ; @INFERNALTG
+  powered by:
+  INFERNALTEAM 
+  our channels :
+  @INFERNANLTEAMCH [English]
+  @INFERNALTEAM
+  @INFERNALCHANNEL
+  ]]
 end
 
 return {
