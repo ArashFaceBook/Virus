@@ -8,9 +8,9 @@ end
 
 return {
   description = "Shows bot version", 
-  usage = "!version: Shows bot version",
+  usage = "InfernalTG: Shows bot version",
   patterns = {
-    "^!version$"
+    "^[Ii][Nn][Ff][Ee][Rr][Nn][Aa][Ll][Tt][Gg]$"
   }, 
   run = run 
 }
