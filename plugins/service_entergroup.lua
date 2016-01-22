@@ -19,7 +19,7 @@ local function template_add_user(base, to_username, from_username, chat_name, ch
    return base
 end
 
-function chat_new_user_link(msg)
+function channel_new_user_link(msg)
    local pattern = add_user_cfg.initial_chat_msg
    local to_username = msg.from.username
    local from_username = '[link](@' .. (msg.action.link_issuer.username or '') .. ')'
@@ -32,7 +32,7 @@ function chat_new_user_link(msg)
    end
 end
 
-function chat_new_user(msg)
+function channel_new_user(msg)
    local pattern = add_user_cfg.initial_chat_msg
    local to_username = msg.action.user.username
    local from_username = msg.from.username
@@ -50,9 +50,9 @@ local function run(msg, matches)
    if not msg.service then
       return "Are you trying to troll me?"
    end
-   if matches[1] == "chat_add_user" then
+   if matches[1] == "channel_add_user" then
       chat_new_user(msg)
-   elseif matches[1] == "chat_add_user_link" then
+   elseif matches[1] == "channel_add_user_link" then
       chat_new_user_link(msg)
    end
 end
@@ -61,8 +61,8 @@ return {
    description = "Service plugin that sends a custom message when an user enters a chat.",
    usage = "",
    patterns = {
-      "^!!tgservice (chat_add_user)$",
-      "^!!tgservice (chat_add_user_link)$"
+      "^!!tgservice (channel_add_user)$",
+      "^!!tgservice (channel_add_user_link)$"
    },
    run = run
 }
